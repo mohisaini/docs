@@ -551,6 +551,33 @@ following::
         // Send an email.
     }
 
+Custom error message
+====================
+
+email
+-----
+While calling ``email`` method with Validator instance, you need to pass your custom error message in third parameter of method ``email``.
+
+    $validator->email($field, $checkMX, 'error-message'); 
+
+Parameters::
+
+$field (string) field name
+$checkMX (bool) whether to check MX record or not
+error-message (string) Custom error message
+
+maxLength
+---------
+You can also set custom error message if you have ``maxLength`` rule in your model.
+
+    $validator->maxLength($field, $maxlenthVal, 'error-message')
+
+Parameters::
+
+$field (string) field name
+$maxlenthVal (bool) max length allowed to enter
+error-message (string) custom error message
+
 .. note::
 
     If you need to validate entities you should use methods like
